@@ -1,0 +1,31 @@
+@media screen and (max-width: 1199px) {
+  .work-section {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .work-section {
+    color: var(--primary-text-color-theme-dark);
+    // padding-top: 0;
+  }
+  .page-work-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .product-work {
+    position: relative;
+  }
+}
+
+// .work-section {
+//   color: var(--section-background-color);
+// }
+// .page-work-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 30px;
+// }
+// .product-work {
+//   position: relative;
+// }
