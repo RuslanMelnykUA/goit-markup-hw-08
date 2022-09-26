@@ -88,7 +88,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--primary-text-color-theme-dark);
-  max-width: 650px;
+  // max-width: 700px;
   margin: 0 auto;
   margin-bottom: 30px;
 }
@@ -109,10 +109,12 @@
     text-transform: uppercase;
     color: var(--primary-text-color-theme-dark);
     margin-bottom: 30px;
+    max-width: 360px;
   }
 }
 @media screen and (min-width: 1200px) {
   .main-title {
     @include font(44px, 900, 60px);
+    max-width: 700px;
   }
 }

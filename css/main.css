@@ -178,7 +178,8 @@ a {
 }
 
 .modal {
-  width: 450px;
+  width: calc(100% - 30px);
+  max-width: 450px;
   min-height: 609px;
   background-color: rgb(255, 255, 255);
   position: absolute;
@@ -243,6 +244,7 @@ a {
   letter-spacing: 0.03em;
   color: var(--primary-text-color-theme-light);
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .modal-form-input-wrapper {
@@ -599,7 +601,6 @@ a {
     position: fixed;
     width: 100%;
     height: 100%;
-    max-height: 796px;
     z-index: 1000;
     top: 0;
     left: 0;
@@ -716,6 +717,11 @@ a {
 }
 
 .page-header {
+  border-bottom: 1px solid #ececec;
+}
+
+.page-header__logo {
+  display: block;
   padding-top: 16px;
   padding-bottom: 16px;
 }
@@ -732,15 +738,11 @@ a {
 @media screen and (min-width: 768px) {
   .page-header__logo {
     margin-right: 88px;
+    padding-top: 26px;
+    padding-bottom: 26px;
   }
   .page-header {
     color: var(--primary-text-color-theme-dark);
-    border-bottom: 1px solid #ececec;
-  }
-  .page-header__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
   .page-nav {
     display: flex;
@@ -753,24 +755,28 @@ a {
     display: flex;
     align-items: center;
   }
+  .menu__item {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
   .menu__item:not(:last-child) {
     margin-right: 50px;
   }
   .menu__link {
     font-family: var(--primary-font);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 1.1666666667;
+    line-height: 1.1428571429;
     letter-spacing: 0.02em;
     color: var(--primary-text-color-theme-light);
     display: block;
-    position: relative;
     transition: color var(--transition-dur-and-func);
   }
   .menu__link:hover, .menu__link:focus {
     color: var(--accent-color);
   }
-  .menu__link.current::after {
+  .menu__link_current::after {
     display: block;
     content: "";
     width: 100%;
@@ -779,12 +785,19 @@ a {
     background-color: var(--accent-color);
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 0px;
     margin-bottom: -1px;
     transition: background-color var(--transition-dur-and-func);
   }
   .menu__link_current {
     color: var(--accent-color);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .page-header__logo {
+    margin-right: 93px;
+    padding-top: 24px;
+    padding-bottom: 25px;
   }
 }
 .page-hero {
@@ -846,7 +859,6 @@ a {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--primary-text-color-theme-dark);
-  max-width: 650px;
   margin: 0 auto;
   margin-bottom: 30px;
 }
@@ -872,6 +884,7 @@ a {
     text-transform: uppercase;
     color: var(--primary-text-color-theme-dark);
     margin-bottom: 30px;
+    max-width: 360px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -879,6 +892,7 @@ a {
     font-size: 44px;
     font-weight: 900;
     line-height: 1.3636363636;
+    max-width: 700px;
   }
 }
 .page-advantages {
@@ -918,7 +932,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 450px;
     height: 120px;
     border-radius: 4px;
     background-color: #f5f4fa;
@@ -1289,7 +1302,7 @@ a {
 }
 
 .sign-mail-content__form {
-  width: 360px;
+  width: 100%;
   height: 50px;
   padding-left: 16px;
   font-style: normal;
@@ -1309,12 +1322,17 @@ a {
   outline: none;
 }
 
+@media screen and (max-width: 767px) {
+  .address-footer-wrap {
+    margin-bottom: 60px;
+  }
+  .social-links-footer {
+    margin-bottom: 60px;
+  }
+}
 @media screen and (max-width: 1199px) {
   .page-footer__container {
     text-align: center;
-  }
-  .address-footer-wrap {
-    margin-bottom: 60px;
   }
   .page-footer__logo {
     display: inline-block;
@@ -1336,19 +1354,18 @@ a {
   .sign-mail-content__form {
     margin-bottom: 20px;
   }
-  .social-links-footer {
-    margin-bottom: 60px;
-  }
 }
 @media screen and (min-width: 768px) {
   .footer-box {
     display: flex;
     justify-content: space-around;
     align-items: baseline;
+    margin-bottom: 60px;
   }
 }
 @media screen and (min-width: 1200px) {
   .page-footer__container {
+    justify-content: space-between;
     display: flex;
     align-items: baseline;
   }
@@ -1368,7 +1385,13 @@ a {
     display: flex;
     align-items: flex-end;
     gap: 12px;
-    padding-left: 93px;
+    margin-left: 93px;
+  }
+  .footer-box {
+    margin-bottom: 0px;
+  }
+  .sign-mail-content__form {
+    width: 360px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
