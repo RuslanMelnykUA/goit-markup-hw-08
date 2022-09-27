@@ -1,4 +1,10 @@
 @media screen and (max-width: 767px) {
+  .mobile-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 64px;
+  }
   .mobile-menu-open {
     background-color: transparent;
     border: none;
@@ -71,9 +77,9 @@
       border-bottom: 4px solid var(--accent-color);
     }
   }
-  .mobile-contacts__item:not(:last-child) {
-    margin-bottom: 32px;
-  }
+  // .mobile-contacts__item:not(:last-child) {
+  //   margin-bottom: 32px;
+  // }
   .mobile-contacts__phone {
     @include font(34px, 500, 40px);
     letter-spacing: 0.02em;
